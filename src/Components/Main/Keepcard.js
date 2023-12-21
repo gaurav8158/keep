@@ -9,8 +9,8 @@ import { Box, Button, Menu, MenuItem, Modal } from '@mui/material';
 const Keepcard = ({ title, note, color, index }) => {
     const style = {
         position: 'absolute',
-        display:"flex",
-        justifyContent:"center",
+        display: "flex",
+        justifyContent: "center",
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
@@ -64,9 +64,9 @@ const Keepcard = ({ title, note, color, index }) => {
 
     return (
         <div style={{ backgroundColor: color }} className='keepcard' >
-           <div><h4 onClick={() => setOpen(!open)}>{title}</h4>
-            </div> 
-         <div className='note-text'>   <span onClick={() => setOpen(!open)}>{note}</span></div>
+            <div><h4 onClick={() => setOpen(!open)}>{title}</h4>
+            </div>
+            <div className='note-text'><span onClick={() => setOpen(!open)}>{note}</span></div>
             <div className='edit-card'>
                 <Button
                     id="basic-button"

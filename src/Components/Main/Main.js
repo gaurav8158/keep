@@ -46,13 +46,11 @@ const Main = () => {
         setcolorBox(!colorBox)
 
     }
-   
-   
     const openColor = Boolean(anchorEl);
-    console.log(list.reverse())
     const filterList = list.filter((val) =>
     ((val.title).includes(filterText)
         || (val.note).includes(filterText)))
+        console.log(filterList);
     return (
         <div className='main-container'>
             <div className='main-left'>
