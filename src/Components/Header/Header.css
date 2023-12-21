@@ -57,9 +57,16 @@
   cursor: pointer;
   background: #d6caca;
 }
-
+.keep-head{
+  margin-left: 10px;
+  font-family: Cambria, Cochin;
+  color: rgb(105, 103, 103);
+}
+.nav{
+  font-family: Arial, Helvetica, sans-serif;
+}
 @media screen and (max-width: 600px) {
-  .hidden {
+  .hidden,.keep-head {
     display: none;
   }
   .text-box {

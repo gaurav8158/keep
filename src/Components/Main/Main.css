@@ -155,8 +155,19 @@
 
 .color-box {
   display: flex;
+ padding: 7px 10px;
+ gap:5px;
 }
-
+.delete-Box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap:30px;
+}
+.delete-Box div{
+  display: flex;
+  justify-content: space-between;
+}
 @media screen and (max-width: 600px) {
   .main-left {
     display: none; /* Hide the div when the screen width is 600 pixels or less */

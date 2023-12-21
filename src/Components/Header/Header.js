@@ -12,11 +12,13 @@ const Header = () => {
   }
   return (
     <div className='nav'>
-      <div className='hidden'>
+      <div className=''>
         <div className='hidden menu-icon'>
           <FeatherIcon className="hidden" icon="menu" />
         </div>
-        <img src={logo} className='hidden logo-img' alt="logo" />
+
+        <img src={logo} className=' logo-img' alt="logo" />
+        <h1 className='keep-head hidden'>Keep</h1>
       </div>
 
       <div className='text-box'>
@@ -25,9 +27,7 @@ const Header = () => {
           <FeatherIcon className="search-icon" icon="search" />
         </div>
       </div>
-
     </div>
   )
 }
-
 export default Header

@@ -20,6 +20,22 @@ const Keepcard = ({ title, note, color, index }) => {
         boxShadow: 24,
         p: 4,
     };
+    const style1 = {
+        position: 'absolute',
+        display: "flex",
+        flexDirection:"coloumn",
+      
+        justifyContent: "center",
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: "100%",
+        maxWidth:"400px",
+        bgcolor: "white",
+        borderRadius: "10px",
+        boxShadow: 24,
+        p: 4,
+    };
     const { colors, handleColor, handleEdit, handleDelete } = useContext(KeepContext);
     const [newTitle, setNewTitle] = useState(title);
     const [newNote, setNewNote] = useState(note);
@@ -52,8 +68,6 @@ const Keepcard = ({ title, note, color, index }) => {
         handleClosed();
         setOpenDelete(false);
     }
-
-
     const handleUpdate = () => {
         const temp = {
             title: newTitle,
@@ -63,7 +77,11 @@ const Keepcard = ({ title, note, color, index }) => {
         handleEdit(temp, index);
         setOpen(false)
     }
+const handleDeleteOpen=()=>{
+    handleClosed()
+setOpenDelete(!openDelete)
 
+}
     return (
         <div style={{ backgroundColor: color }} className='keepcard' >
             <div><h4 onClick={() => setOpen(!open)}>{title}</h4>
@@ -77,7 +95,7 @@ const Keepcard = ({ title, note, color, index }) => {
                     aria-expanded={openColor ? 'true' : undefined}
                     onClick={handleColorCLick}
                 >
-                    <img src={picker} width={20} />
+                    <img src={picker} width={20} alt="img"/>
                 </Button>
                 <Menu
                     id="basic-menu"
@@ -114,8 +132,7 @@ const Keepcard = ({ title, note, color, index }) => {
                     }}
                 >
                     <MenuItem onClick={handleOpen}>Edit</MenuItem>
-                    <MenuItem onClick={() => setOpenDelete(!openDelete)}>Delete</MenuItem>
-
+                    <MenuItem onClick={handleDeleteOpen}>Delete</MenuItem>
                 </Menu>
                 <Modal
                     open={open}
@@ -135,7 +152,7 @@ const Keepcard = ({ title, note, color, index }) => {
                                     aria-expanded={openColor ? 'true' : undefined}
                                     onClick={handleColorCLick}
                                 >
-                                    <img src={picker} width={20} />
+                                    <img src={picker} width={20} alt="img"/>
                                 </Button>
                                 <Menu
                                     id="basic-menu"
@@ -172,12 +189,12 @@ const Keepcard = ({ title, note, color, index }) => {
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                 >
-                    <Box sx={style}>
-                        <div>
-                            <h1>Are you sure want to delete ?</h1>
+                    <Box sx={style1}>
+                        <div className='delete-Box'>
+                            <h1>Are you sure ?</h1>
                             <div>
-                                <Button onClick={handleDeleted} variant="outlined" color="error">Confirm</Button>
-                                <Button variant="contained" color="success" onClick={() => setOpenDelete(false)}>No</Button>
+                                <Button onClick={handleDeleted} variant="contained" color="error">Delete</Button>
+                                <Button variant="contained" color="success" onClick={() => setOpenDelete(false)}>Cancel</Button>
                             </div>
                         </div>
                     </Box>
