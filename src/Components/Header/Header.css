@@ -1,0 +1,68 @@
+.nav {
+  padding: 5px 20px;
+  background-color: white;
+  position: sticky;
+  z-index: 999;
+  top: -10px;
+  box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  width: 60px;
+}
+
+.menu-icon {
+  padding: 7px 10px;
+  transition: all;
+}
+.menu-icon:hover {
+  cursor: pointer;
+  background: rgb(214, 212, 212);
+  border-radius: 20px;
+}
+.text-box > input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #c9c4c4;
+  background-color: #eeeded;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.text-box > input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.nav div {
+  display: flex;
+  align-items: center;
+}
+.text-box {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  margin: 20px;
+}
+.search-icon {
+  position: absolute;
+  right: 4px;
+  padding: 5px;
+  border-radius: 20px;
+}
+.search-icon:hover {
+  cursor: pointer;
+  background: #d6caca;
+}
+
+@media screen and (max-width: 600px) {
+  .hidden {
+    display: none;
+  }
+  .text-box {
+    width: 100%;
+  }
+}

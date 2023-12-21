@@ -1,0 +1,166 @@
+.main-container {
+  display: flex;
+}
+.main-left {
+  height: 100vh;
+  min-height: 100%;
+  background-color: white;
+  width: 200px;
+}
+.main-right {
+  margin: 20px auto;
+  width: 100%;
+}
+.input-box {
+  margin: auto;
+  width: 90%;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  padding: 10px;
+}
+.input-box input,
+.noteinput {
+  width: 93%;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  padding: 10px;
+  background-color: transparent;
+}
+.input-box > div {
+  display: flex;
+  margin-top: 10px;
+}
+.input-box div input {
+  border: none;
+}
+
+.input-box div button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: #007bff;
+  box-shadow: 0 0 1px rgba(0, 123, 255, 0.5);
+  cursor: pointer;
+}
+.input-box div button:hover {
+  border-color: #1066c3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.keepList {
+  display: flex;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  max-width: 1200px;
+}
+.note-text {
+  overflow: hidden;
+}
+
+.edit-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.coloritem {
+  width: 20px;
+  height: 20px;
+  border-radius: 40px;
+  border: 0.1px solid black;
+  cursor: pointer;
+}
+
+.main-left div {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  justify-content: space-between;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main-left div:hover {
+  background-color: rgb(219, 222, 225);
+}
+.first-icon {
+  background-color: #feefc3;
+}
+/* ------- card css ----------- */
+
+.keepcard {
+  width: 95%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 10px;
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+
+  white-space: nowrap; /* Prevent text from wrapping */
+
+  text-overflow: ellipsis;
+}
+.edit-card {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.edit-delete-btn-drawer {
+  position: absolute;
+  top: 70px;
+  right: 5px;
+  display: flex;
+  list-style-type: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2px;
+  background-color: #fff;
+  gap: 2px;
+  flex-direction: column;
+  /* overflow: hidden; */
+}
+
+.edit-delete-btn {
+  width: 70%;
+  font-size: large;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 12px;
+}
+.edit-delete-btn:hover {
+  box-shadow: 0 0 1px rgba(0, 123, 255, 0.5);
+}
+
+.modal-box {
+  margin: 0;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 0px;
+}
+
+.color-box {
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .main-left {
+    display: none; /* Hide the div when the screen width is 600 pixels or less */
+  }
+}
