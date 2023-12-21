@@ -6,10 +6,8 @@ export const ContextProvider = ({ children }) => {
     const item = JSON.parse(localStorage.getItem("list")) || [];
     const [list, setList] = useState(item);
 
-
     const [filterText, setFilterText] = useState("");
     const colors = ["#FAAFA8", "#F39F76", "#FFF8B8", "#E2F6D3", "#B4DDD3", "#D4E4ED", "#D3BFDB", "#F6E2DD", "#E9E3D4", "#EFEFF1"]
-
 
 
     // Function to add a new item in the list.
@@ -19,6 +17,7 @@ export const ContextProvider = ({ children }) => {
         setList(temp);
         localStorage.setItem("list", JSON.stringify(temp))
     }
+    // Function to update color
     const handleColor = (color, index) => {
         let temp = [...list];
         temp[index].color = color;
@@ -26,13 +25,13 @@ export const ContextProvider = ({ children }) => {
         setList(temp);
         localStorage.setItem("list", JSON.stringify(temp))
     }
-
+// Function to delete item
     const handleDelete = (index) => {
         let temp = list.filter((_, i) => index !== i);
         setList(temp);
         localStorage.setItem("list", JSON.stringify(temp))
     }
-
+  // Function to update item
     const handleEdit = (val, index) => {
         let temp = [...list]
         temp[index] = val;

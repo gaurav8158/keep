@@ -28,6 +28,7 @@ const Keepcard = ({ title, note, color, index }) => {
     const [anchorE2, setAnchorE2] = useState(null);
     const openColor = Boolean(anchorE2);
     const [open, setOpen] = useState(false);
+    const [openDelete, setOpenDelete] = useState(false);
     const verticalopen = Boolean(anchorEl);
     const handleClicked = (event) => {
         setAnchorEl(event.currentTarget);
@@ -49,6 +50,7 @@ const Keepcard = ({ title, note, color, index }) => {
     const handleDeleted = () => {
         handleDelete(index);
         handleClosed();
+        setOpenDelete(false);
     }
 
 
@@ -112,7 +114,8 @@ const Keepcard = ({ title, note, color, index }) => {
                     }}
                 >
                     <MenuItem onClick={handleOpen}>Edit</MenuItem>
-                    <MenuItem onClick={handleDeleted}>Delete</MenuItem>
+                    <MenuItem onClick={() => setOpenDelete(!openDelete)}>Delete</MenuItem>
+
                 </Menu>
                 <Modal
                     open={open}
@@ -159,6 +162,22 @@ const Keepcard = ({ title, note, color, index }) => {
                                     })}
                                 </ul> */}
                                 <button onClick={handleUpdate}>Save</button>
+                            </div>
+                        </div>
+                    </Box>
+                </Modal>
+                <Modal
+                    open={openDelete}
+                    onClose={() => setOpenDelete(false)}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box sx={style}>
+                        <div>
+                            <h1>Are you sure want to delete ?</h1>
+                            <div>
+                                <Button onClick={handleDeleted} variant="outlined" color="error">Confirm</Button>
+                                <Button variant="contained" color="success" onClick={() => setOpenDelete(false)}>No</Button>
                             </div>
                         </div>
                     </Box>

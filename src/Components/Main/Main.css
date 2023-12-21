@@ -102,15 +102,13 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;
+  word-wrap: break-word; /* Ensure that long words break and wrap onto the next line */
+  overflow-wrap: break-word;
   flex-direction: column;
   overflow: hidden;
   gap: 10px;
   justify-content: space-between;
   font-family: Arial, Helvetica, sans-serif;
-
-  white-space: nowrap; /* Prevent text from wrapping */
-
   text-overflow: ellipsis;
 }
 .edit-card {
